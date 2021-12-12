@@ -1,4 +1,18 @@
 {
-  "users": [],
-  "movies": []
+  "users": [
+    {
+      "email": "r.paivabr@gmail.com",
+      "password": "$2a$10$RYXWEzK53i0Cn3cpdNzlA.4WxTVikhZkA1wATNu40Clcm9oKOeBki",
+      "firstname": "Rafael",
+      "age": 36,
+      "role": "admin",
+      "id": 1
+    }
+  ],
+  "movies": [
+    {
+      "title": "Matrix 4",
+      "id": 1
+    }
+  ]
 }

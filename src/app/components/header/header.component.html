@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span>Angular Guards e Preload</span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isAdmin$ | async">
+    <button mat-button [routerLink]="['admin']">Admin</button>
+  </ng-container>
+  <ng-container *ngIf="isAuth$ | async; else notLoggedIn">
+    <button mat-button [routerLink]="['movies']">Movies</button>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+  <ng-template #notLoggedIn>
+    <button mat-button [routerLink]="['login']">Login</button>
+  </ng-template>
+</mat-toolbar>

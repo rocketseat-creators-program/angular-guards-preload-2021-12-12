@@ -54,6 +54,8 @@ Link para documentação: [Json Server Auth](https://www.npmjs.com/package/json-
 - Angular Reactive Forms: [Link](https://angular.io/guide/reactive-forms)
 - RxJS Operators (tap, delay, catchError, finalize): [Link](https://rxjs.dev/api/operators)
 - Lazy-loading feature modules: [Link](https://angular.io/guide/lazy-loading-ngmodules)
+- Angular modules best practices: [Link](https://dev.to/this-is-angular/angular-modules-best-practices-2021-3lo5)
+- Desmistificando SSR, CSR, Universal and SSG [Link](https://dev.to/kefranabg/demystifying-ssr-csr-universal-and-static-rendering-with-animations-m7d)
 
 ## Expert Creator
 

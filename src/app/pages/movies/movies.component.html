@@ -1,0 +1,6 @@
+<div class="content">
+  <h2>Lista de Filmes</h2>
+  <h3 *ngFor="let movie of movies$ | async">
+    {{ movie.title }}
+  </h3>
+</div>
