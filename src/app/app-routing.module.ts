@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './pages/admin/admin.component';
-import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
-import { SettingsComponent } from './pages/admin/settings/settings.component';
-import { UsersComponent } from './pages/admin/users/users.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
-import { MoviesComponent } from './pages/movies/movies.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AdminGuardService } from './services/admin-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
-  { path: 'movies', component: MoviesComponent },
+  { 
+    path: 'movies', 
+    loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule), 
+    canActivate: [AuthGuardService] 
+  },
+  { 
+    path: 'admin', 
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), 
+    canLoad: [AdminGuardService], 
+  },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent, children: [
-    { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'users', component: UsersComponent },
-    { path: 'settings', component: SettingsComponent },
-  ]},
   { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

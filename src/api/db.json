@@ -2,10 +2,10 @@
   "users": [
     {
       "email": "r.paivabr@gmail.com",
-      "password": "$2a$10$RYXWEzK53i0Cn3cpdNzlA.4WxTVikhZkA1wATNu40Clcm9oKOeBki",
+      "password": "$2a$10$5QFcyuKiK7H9hPR6t1qiCuogfHzcF6S34/r8Vn1hwcUW8Djufrwm2",
       "firstname": "Rafael",
       "age": 36,
-      "role": "admin",
+      "role": "user",
       "id": 1
     }
   ],
